@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JEE Main 2025 - Login</title>
+    
+    <!-- Bootstrap and FontAwesome Styles -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    
+    <style>
+        body {
+            font-family: var(--bs-font-sans-serif);
+            background-color: var(--bs-light);
+        }
+        .header {
+            background: #002041;
+            padding: 1em;
+            color: white;
+            text-align: center;
+        }
+        .container {
+            max-width: 500px;
+            margin: 50px auto;
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+        }
+        .btn-primary {
+            background: #002041;
+            border: none;
+        }
+        .captcha-box {
+            font-weight: bold;
+            font-size: 20px;
+            letter-spacing: 3px;
+            background: #ddd;
+            padding: 10px;
+            display: inline-block;
+            margin-bottom: 10px;
+        }
+        .profile-img {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            object-fit: cover;
+        }
+    </style>
+</head>
+<body>
+    <div class="container-fluid">
+        <div class="row header mt-2">
+            <div class="col-md-3 col-sm-3 d-flex align-items-center">
+                <img src="government-of-india-logo-clipart.jpg" alt="Left Image" class="profile-img">
+            </div>
+            <div class="col-md-6 col-sm-6 headingmain text-center">
+                <h1 class="text-center">JOINT ENTRANCE EXAMINATION (Main) – 2025</h1>
+                <h1 class="text-center">SESSION 1 (JANUARY 2025)</h1>
+                <h4 class="text-center">NTA SCORE CARD: Paper 1 (B.E./B Tech.)</h4>
+            </div>
+            <div class="col-md-3 col-sm-3 d-flex align-items-center justify-content-end">
+                <img src="NTA logo.png" alt="Right Image" class="profile-img">
+            </div>
+        </div>
+    </div>
+    
+    <div class="container">
+        <form>
+            <div class="mb-3">
+                <label for="txtAppNo" class="form-label">Application Number</label>
+                <input type="text" id="txtAppNo" class="form-control" placeholder="Enter Application Number" required>
+            </div>
+            <div class="mb-3">
+                <label for="txtPassword" class="form-label">Password</label>
+                <input type="password" id="txtPassword" class="form-control" placeholder="Enter Password" required>
+            </div>
+            <div class="mb-3">
+                <label class="form-label">CAPTCHA</label>
+                <div class="captcha-box" id="captchaText"></div>
+                <button type="button" onclick="generateCaptcha()" class="btn btn-secondary btn-sm">↻ Refresh</button>
+                <input type="text" id="Captcha1" class="form-control mt-2" placeholder="Enter CAPTCHA">
+            </div>
+            <a href="jee main 2025 result.pdf" target="_blank" class="btn btn-primary w-100">
+                LOGIN
+            </a>
+            
+        </form>
+    </div>
+    
+    <script>
+        function generateCaptcha() {
+            let chars = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
+            let captcha = '';
+            for (let i = 0; i < 6; i++) {
+                captcha += chars.charAt(Math.floor(Math.random() * chars.length));
+            }
+            document.getElementById("captchaText").textContent = captcha;
+        }
+        
+        document.addEventListener("DOMContentLoaded", generateCaptcha);
+    </script>
+</body>
+</html>
